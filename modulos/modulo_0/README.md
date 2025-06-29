@@ -91,14 +91,14 @@ Ambas bibliotecas ya tienen sus reglas de compilación en su propio CMakeLists.t
 
 ```cmake
 # Setea la variable CMSISCORE al directorio de CMSIS desde el proyecto
-set(CMSISCORE ${CMAKE_SOURCE_DIR}/../../CMSIS_6/CMSIS/Core)
+set(CMSISCORE ${CMAKE_SOURCE_DIR}/../../../CMSIS_6/CMSIS/Core)
 # Agrega el directorio de CMSIS-DSP como biblioteca del proyecto
-add_subdirectory(${CMAKE_SOURCE_DIR}/../../CMSIS-DSP ${CMAKE_BINARY_DIR}/CMSIS-DSP)
+add_subdirectory(${CMAKE_SOURCE_DIR}/../../../CMSIS-DSP ${CMAKE_BINARY_DIR}/CMSIS-DSP)
 # Linkea CMSIS-DSP al proyecto
 target_link_libraries(${PROJECT_NAME} CMSISDSP)
 ```
 
-> ⚠️ Estas rutas del ejemplo son relativas a un proyecto que esté creado dentro del directorio [workspace](../../workspace/). 
+> ⚠️ Estas rutas del ejemplo son relativas a un proyecto que esté creado dentro del directorio del módulo donde se esté trabajando. 
 
 ## Ejemplo para compilar
 
@@ -106,9 +106,9 @@ Lo más sencillo que podemos intentar hacer para probar que efectivamente anda e
 
 ### Creación de proyecto
 
-Vamos a crear un proyecto nuevo dentro del directorio [workspace](../../workspace/) que vamos a llamar `00_hello_cmsis`. Vamos también a habilitar soporte para stdio por USB tildando la casilla _Console over USB_ en Stdio support.
+Vamos a crear un proyecto nuevo dentro de este directorio que vamos a llamar `00_hello_cmsis`. Vamos también a habilitar soporte para stdio por USB tildando la casilla _Console over USB_ en Stdio support.
 
-Una vez creado el proyecto vamos a poner este código de ejemplo en el programa principal [00_hello_cmsis.c](../../workspace/00_hello_cmsis/00_hello_cmsis.c):
+Una vez creado el proyecto vamos a poner este código de ejemplo en el programa principal [00_hello_cmsis.c](./00_hello_cmsis/00_hello_cmsis.c):
 
 ```c
 #include <stdio.h>
