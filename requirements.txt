@@ -1,0 +1,6 @@
+cmsisdsp
+numpy
+matplotlib
+scipy
+jupyter
+ipykernel
